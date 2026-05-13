@@ -34,7 +34,7 @@ Healthcare research institutions need a realistic synthetic dataset to:
 ##  Process Steps
 ### 1. Generate Data (in Colab)
 
-Open this notebook and run the "Fran" cell:
+Run this notebook:
 [Hackathon Colab Notebook](https://colab.research.google.com/drive/1BVV8Q0xRlLwziRv-g54IM2hunn4F2PQZ)
 
 Output: `synthetic_patients.csv` + `synthetic_daily_data.csv`
