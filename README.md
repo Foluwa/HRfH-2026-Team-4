@@ -20,7 +20,7 @@ Healthcare research institutions need a realistic synthetic dataset to:
 3. Predict long-term recovery trajectories
 
 ## Technical Architecture
- ## 📊 Quick Stats
+ ## Quick Stats
 
 | Metric | Value |
 |--------|-------|
