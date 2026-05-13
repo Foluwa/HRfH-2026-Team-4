@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 # Launch dashboard
 streamlit run app.py
-
+```
 3. Start Analyzing
 
 ## Key Features
