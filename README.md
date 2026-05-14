@@ -278,6 +278,126 @@ fast_score = sigmoid(2 − 0.03 × age − 0.05 × BMI + 0.5 × activity_code)
 slow_score = sigmoid(−4 + 0.04 × age + 0.08 × BMI + 0.8 × diabetes)
 intermittent_score = 1.0 (baseline)
 
+## Design Rationale
+
+### Recovery Phenotypes (Fast, Intermittent, Slow)
+
+The recovery phenotypes were designed to represent the heterogeneity observed in real post-operative rehabilitation trajectories.
+
+- **Fast phenotype**: Represents patients with rapid and stable rehabilitation progress
+- **Intermittent phenotype**: Captures fluctuating recovery with alternating periods of improvement and setbacks
+- **Slow phenotype**: Represents patients with prolonged functional limitations and delayed rehabilitation
+
+These phenotypes create meaningful structure in the dataset and allow clustering and trajectory analysis methods to identify distinct recovery patterns.
+
+### Recovery Rate Parameter (k)
+
+The recovery rate parameter controls how quickly a patient progresses through rehabilitation over time. Higher values of k generate steeper recovery curves that reach functional independence earlier, whilst lower values create slower and more prolonged recovery trajectories.
+
+This parameter was intentionally varied across phenotypes to reflect clinically plausible rehabilitation speeds, where fast recovery patients improve more rapidly and slow recovery patients require substantially longer periods to achieve functional gains. Using different recovery rates also increases longitudinal variability within the dataset and prevents all trajectories from following identical temporal patterns.
+
+### Recovery Inflection Point (t₀)
+
+The inflection point parameter determines the time at which recovery accelerates most rapidly. This was included because rehabilitation does not progress linearly after surgery. Patients often experience an early low-function period immediately following the operation, followed by accelerated improvement during active rehabilitation before eventually plateauing.
+
+Earlier inflection points were assigned to fast recovery patients to represent rapid rehabilitation engagement, whilst delayed inflection points were assigned to slow recovery patients to simulate prolonged recovery initiation and delayed functional improvement.
+
+### Maximum Achievable Steps (max_steps)
+
+The maximum achievable step count represents the patient's long-term functional mobility ceiling. This variable was designed to depend on:
+
+- Age
+- BMI
+- Pre-operative activity level
+
+These characteristics strongly influence rehabilitation outcomes and long-term physical function in real populations. Older age and higher BMI reduce expected mobility capacity, whilst higher baseline activity increases recovery potential. Phenotype-specific multipliers were also applied so that fast recovery patients achieve higher long-term mobility and slow recovery patients stabilise at lower functional levels.
+
+### Latent Recovery States (Stable, Improving, Flare, Plateau)
+
+The latent recovery states were introduced to model hidden physiological or behavioural recovery conditions that are not directly observable but influence wearable measurements.
+
+Recovery following surgery is rarely smooth or perfectly continuous, as patients may experience temporary setbacks, pain flares, fatigue, or rehabilitation plateaus:
+
+- **Stable state**: Consistent recovery
+- **Improving state**: Periods of accelerated rehabilitation progress
+- **Flare state**: Simulates temporary deterioration or pain episodes
+- **Plateau state**: Represents stalled recovery
+
+Including these states creates realistic temporal variability and prevents the trajectories from appearing overly deterministic.
+
+### Transition Matrices
+
+The transition matrices define the probability of patients moving between latent recovery states over time and were designed to reflect phenotype-specific rehabilitation dynamics:
+
+- **Fast recovery patients**: Higher probabilities of remaining in stable or improving states; lower probabilities of prolonged flare episodes, reflecting more resilient rehabilitation behaviour
+- **Slow recovery patients**: Greater persistence in flare and plateau states to simulate chronic instability and delayed recovery
+- **Intermittent patients**: More balanced transition probabilities to create fluctuating trajectories with alternating periods of progress and deterioration
+
+These matrices introduce temporal dependency and clinically plausible stochastic behaviour into the simulation.
+
+### State Effect Multipliers
+
+The state effect multipliers determine how latent recovery states influence observable daily activity levels:
+
+- **Improving states**: Increase step counts to simulate successful rehabilitation progress and increased mobility
+- **Flare states**: Substantially reduce activity to represent pain, inflammation, swelling, or reduced function
+- **Plateau states**: Slightly reduce activity to reflect suboptimal but stable recovery
+
+These multipliers were included to establish a realistic relationship between hidden recovery conditions and measurable wearable outcomes.
+
+### Autocorrelated Noise
+
+Autocorrelated noise was incorporated to simulate the temporal consistency commonly observed in wearable sensor data. In real rehabilitation trajectories, unusually good or poor recovery days are often followed by similar days rather than completely independent fluctuations.
+
+The autocorrelation structure creates sustained periods of improvement or decline, smoother longitudinal behaviour, and more realistic recovery dynamics compared with purely random independent noise.
+
+## Patient Characteristic Justifications
+
+### Age
+
+Age was included because it is a major determinant of rehabilitation outcomes following knee replacement surgery. Older patients generally experience slower recovery, lower physical resilience, reduced mobility, and a higher burden of comorbidities. In the simulator, age influences both maximum mobility potential and the probability of certain health conditions, helping generate clinically plausible recovery patterns across the synthetic population.
+
+### BMI
+
+BMI was incorporated because body composition strongly influences post-operative mobility, rehabilitation difficulty, cardiovascular load, and long-term physical function. Higher BMI values reduce maximum achievable step counts and increase the probability of metabolic and cardiovascular comorbidities within the simulation.
+
+The BMI distribution was intentionally generated using mixture groups to better reflect realistic clinical populations rather than assuming a single normal distribution.
+
+### Pre-operative Activity Level
+
+Pre-operative activity level was included because baseline physical fitness and mobility are strong predictors of rehabilitation success after surgery. Patients with higher pre-operative activity are generally better conditioned, more physically resilient, and more likely to engage effectively with rehabilitation programmes. This variable therefore increases maximum achievable mobility and contributes to faster functional recovery trajectories.
+
+### Baseline Pain
+
+Baseline pain was designed to influence recovery-related behaviour such as sleep quality and overall rehabilitation burden. Higher baseline pain levels reduce simulated sleep duration and contribute indirectly to poorer recovery experiences. This variable was included to introduce additional behavioural realism into the synthetic trajectories and create more complex interactions between physiological and wearable-derived variables.
+
+### Comorbidities
+
+The comorbidities (diabetes, hypertension, cardiovascular disease, osteoporosis, musculoskeletal disease) were generated probabilistically based on age and BMI because these health conditions are not independent in real clinical populations. 
+
+Conditions such as diabetes and cardiovascular disease increase rehabilitation complexity and are associated with reduced physical function and poorer long-term recovery outcomes. Including correlated comorbidities improves population realism and creates clinically plausible variation in recovery trajectories.
+
+## Wearable Data Features
+
+### Heart Rate
+
+Heart rate was simulated as a function of baseline cardiovascular characteristics and physical activity levels. Higher step counts slightly increase heart rate, whilst additional random variation reflects physiological variability and wearable measurement noise. This relationship was included to mimic real-world wearable sensor behaviour and provide a secondary physiological signal alongside mobility trajectories.
+
+### Sleep Duration
+
+Sleep duration was designed to reflect the interaction between pain, recovery, and physical activity. Higher pain levels reduce sleep quality and duration, whilst greater physical activity slightly improves sleep outcomes. Random variability was added to reflect natural behavioural fluctuations. Including sleep data expands the simulator beyond mobility alone and creates a richer multimodal wearable dataset.
+
+## Missing Data Mechanisms
+
+The missingness pathways were intentionally designed to replicate realistic wearable data challenges commonly encountered in digital health research:
+
+- **Random missingness**: Simulates occasional device or transmission failures
+- **Block missingness**: Represents temporary device disengagement or charging gaps
+- **Flare-related missingness**: Reflects patients being less likely to wear devices during periods of pain or deterioration
+- **Seasonal missingness**: Simulates behavioural variation during winter months
+
+Including multiple missingness mechanisms creates more realistic incomplete longitudinal datasets and allows evaluation of analytical methods under different missing data assumptions.
+
 ## Citation
 @dataset{hrfh_hackathon_2026,
   title={Synthetic Knee Replacement Recovery Data},
