@@ -66,9 +66,8 @@ streamlit run app.py
 ```
 ## 3. Dashboard User's Guide
 
-User can access the Dashboard scanning the following QR Code:
+User can access the Dashboard by clicking on <a href="https://huggingface.co/spaces/Foluwa/HRfH-2026-Team-4-task-1" target="_blank" rel="noopener noreferrer">Dashboard Link</a> or scanning the following QR Code:
 
-<a href="https://huggingface.co/spaces/Foluwa/HRfH-2026-Team-4-task-1" target="_blank" rel="noopener noreferrer">Dashboard Link</a>
 ![QR CODE](https://raw.githubusercontent.com/foluwa/HRfH-2026-Team-4/main/screenshots/qr_code.png)
 
 
