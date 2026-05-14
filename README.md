@@ -68,6 +68,10 @@ streamlit run app.py
 
 User can access the Dashboard scanning the following QR Code:
 
+![Dashboard Link](https://huggingface.co/spaces/Foluwa/HRfH-2026-Team-4-task-1)
+![QR CODE](https://raw.githubusercontent.com/foluwa/HRfH-2026-Team-4/main/screenshots/qr_code.png)
+
+
 Dashboard helps users interacting and generating a comma-separated values file (.csv) of a virtual subject yearly-step count. 
 
 User can modify following parameters
@@ -78,7 +82,7 @@ User can modify following parameters
 
 - 
  
- ## Dashboard Screenshots
+## Dashboard Screenshots
 
 The Streamlit dashboard provides an interactive interface for exploring simulated patient recovery trajectories, configurable missingness mechanisms, clustering, Monte Carlo evaluation, and downloadable outputs.
 
@@ -90,7 +94,6 @@ The Streamlit dashboard provides an interactive interface for exploring simulate
 ### Dashboard Visualisations and Analysis
 
 ![Dashboard screenshot 4](https://raw.githubusercontent.com/foluwa/HRfH-2026-Team-4/main/screenshots/dashboard_4.png)
-https://huggingface.co/spaces/Foluwa/HRfH-2026-Team-4-task-1
 
 
 ### 4. Start Analyzing
