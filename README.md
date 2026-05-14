@@ -96,6 +96,9 @@ comorbidity patterns for knee replacement candidates:
 Comorbidities influence recovery trajectories in the simulation through slower logistic curves and higher missing data rates.
 
 
+<img width="2506" height="1446" alt="qqplots" src="https://github.com/user-attachments/assets/24ef32c0-3e60-40f1-8319-88515dc5056c" />
+
+
 ## Citation
 @dataset{hrfh_hackathon_2026,
   title={Synthetic Knee Replacement Recovery Data},
