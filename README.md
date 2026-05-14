@@ -67,6 +67,21 @@ streamlit run app.py
 ### 3. Dashboard understanding 
 Dashboard was created with the intention to be able to play with the variables, 
  
+ ## Dashboard Screenshots
+
+The Streamlit dashboard provides an interactive interface for exploring simulated patient recovery trajectories, configurable missingness mechanisms, clustering, Monte Carlo evaluation, and downloadable outputs.
+
+
+### Dashboard Overview and Controls
+
+![Dashboard screenshot 3](https://raw.githubusercontent.com/foluwa/HRfH-2026-Team-4/main/screenshots/dashboard_3.png)
+
+### Dashboard Visualisations and Analysis
+
+![Dashboard screenshot 4](https://raw.githubusercontent.com/foluwa/HRfH-2026-Team-4/main/screenshots/dashboard_4.png)
+https://huggingface.co/spaces/Foluwa/HRfH-2026-Team-4-task-1
+
+
 ### 4. Start Analyzing
 
 ## Key Features
@@ -105,19 +120,6 @@ Comorbidities influence recovery trajectories in the simulation through slower l
 <img width="2506" height="1446" alt="qqplots" src="https://github.com/user-attachments/assets/24ef32c0-3e60-40f1-8319-88515dc5056c" />
 
 Quantile–quantile (QQ) plots of the generated sample data for age, body mass index (BMI), max daily steps count and higher reported baseline pain against a theoretical normal distribution.
-
-## Dashboard Screenshots
-
-The Streamlit dashboard provides an interactive interface for exploring simulated patient recovery trajectories, configurable missingness mechanisms, clustering, Monte Carlo evaluation, and downloadable outputs.
-
-
-### Dashboard Overview and Controls
-
-![Dashboard screenshot 3](https://raw.githubusercontent.com/foluwa/HRfH-2026-Team-4/main/screenshots/dashboard_3.png)
-
-### Dashboard Visualisations and Analysis
-
-![Dashboard screenshot 4](https://raw.githubusercontent.com/foluwa/HRfH-2026-Team-4/main/screenshots/dashboard_4.png)
 
 
 ## Citation
