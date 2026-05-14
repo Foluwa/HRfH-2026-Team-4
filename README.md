@@ -106,6 +106,20 @@ Comorbidities influence recovery trajectories in the simulation through slower l
 
 Quantile–quantile (QQ) plots of the generated sample data for age, body mass index (BMI), max daily steps count and higher reported baseline pain against a theoretical normal distribution.
 
+## Dashboard Screenshots
+
+The Streamlit dashboard provides an interactive interface for exploring simulated patient recovery trajectories, configurable missingness mechanisms, clustering, Monte Carlo evaluation, and downloadable outputs.
+
+
+### Dashboard Overview and Controls
+
+![Dashboard screenshot 3](https://raw.githubusercontent.com/foluwa/HRfH-2026-Team-4/main/screenshots/dashboard_3.png)
+
+### Dashboard Visualisations and Analysis
+
+![Dashboard screenshot 4](https://raw.githubusercontent.com/foluwa/HRfH-2026-Team-4/main/screenshots/dashboard_4.png)
+
+
 ## Citation
 @dataset{hrfh_hackathon_2026,
   title={Synthetic Knee Replacement Recovery Data},
