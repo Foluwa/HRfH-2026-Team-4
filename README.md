@@ -64,10 +64,10 @@ pip install -r requirements.txt
 # Launch dashboard
 streamlit run app.py
 ```
-#### 2.1 Dashboard understanding 
+### 3. Dashboard understanding 
 Dashboard was created with the intention to be able to play with the variables, 
  
-### 3. Start Analyzing
+### 4. Start Analyzing
 
 ## Key Features
 Three Recovery Phenotypes
