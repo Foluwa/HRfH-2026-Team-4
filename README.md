@@ -36,6 +36,7 @@ Healthcare research institutions need a realistic synthetic dataset to:
 
 Run this notebook:
 [Hackathon Colab Notebook](https://colab.research.google.com/drive/1BVV8Q0xRlLwziRv-g54IM2hunn4F2PQZ)
+[Hackthon Colab Notebook- missing data](https://colab.research.google.com/drive/1JA1zPx344pJpAkhD363n62Fo3GdQERbM)
 
 Output: `synthetic_patients.csv` + `synthetic_daily_data.csv`
 
