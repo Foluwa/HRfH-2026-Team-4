@@ -101,6 +101,7 @@ Comorbidities influence recovery trajectories in the simulation through slower l
 **QQ-plots of continuous baseline characteristics**
 <img width="2506" height="1446" alt="qqplots" src="https://github.com/user-attachments/assets/24ef32c0-3e60-40f1-8319-88515dc5056c" />
 
+Quantile–quantile (QQ) plots of the generated sample data for age, body mass index (BMI), max daily steps count and higher reported baseline pain against a theoretical normal distribution.
 
 ## Citation
 @dataset{hrfh_hackathon_2026,
