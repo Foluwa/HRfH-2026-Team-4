@@ -95,7 +95,7 @@ comorbidity patterns for knee replacement candidates:
  - Osteoporosis (7.8%) and musculoskeletal disease (22.9%) are less common
 Comorbidities influence recovery trajectories in the simulation through slower logistic curves and higher missing data rates.
 
-** QQ-plots of continuous baseline characteristics**
+**QQ-plots of continuous baseline characteristics**
 <img width="2506" height="1446" alt="qqplots" src="https://github.com/user-attachments/assets/24ef32c0-3e60-40f1-8319-88515dc5056c" />
 
 
