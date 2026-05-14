@@ -73,3 +73,6 @@ Three Recovery Phenotypes
 Health Research from Home (HRfH)
 Clinical advisors for medical validation
 Hackathon participants
+
+## License
+MIT License - see [LICENSE](LICENSE) file
