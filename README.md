@@ -139,7 +139,6 @@ All synthetic data parameters were selected to reflect published epidemiology, c
 
 ## Demographics
 ### Age (Truncated Normal: μ=68, σ=8, range 45–90 years)
-**Justification:**
 - **Population mean**: Published epidemiology shows average TKA age is 65–66 years in the United States
 - **Standard deviation (8 years)**: Captures realistic spread where ~68% of patients fall between 60–76 years and ~95% fall between 52–84 years
 - **Minimum (45 years)**: Patients under 50 are considered "young for knee replacement" but still occur; 45 years is a realistic lower bound for advanced osteoarthritis
@@ -147,14 +146,12 @@ All synthetic data parameters were selected to reflect published epidemiology, c
 - **Clinical impact**: Age directly increases comorbidity burden (via sigmoid functions) and slows recovery phenotype assignment, reflecting real-world outcomes where older patients recover more slowly
 
 ### Gender (Categorical: 45% male, 50% female, 5% non-binary)
-**Justification:**
 - **Female predominance (50%)**: TKA cohorts typically show slight female majority due to higher osteoarthritis prevalence and surgical acceptance in women
 - **Male proportion (45%)**: Reflects actual gender distribution in surgical populations
 - **Non-binary (5%)**: Included for demographic inclusivity and reflects modern healthcare diversity
 - **Clinical impact**: Gender does not directly affect recovery in this model but ensures demographic realism
 
 ### Height (Truncated Normal: μ=168 cm, σ=10, range 145–200 cm)
-**Justification:**
 - **Mean (168 cm)**: Approximates average adult height in Western populations (UK/US data)
 - **Standard deviation (10 cm)**: Captures realistic variation (~±10 cm covers most adults)
 - **Range (145–200 cm)**: Accommodates short and tall individuals whilst excluding implausible extremes
@@ -162,7 +159,6 @@ All synthetic data parameters were selected to reflect published epidemiology, c
 
 ## Body Composition
 ### BMI (Mixture Distribution: 15% normal, 40% overweight, 45% obese)
-**Justification:**
 - **Obesity prevalence (45%)**: Reflects 40–50% obesity rates in published TKA cohorts (higher than general population)
 - **Overweight (40%)**: Common presentation; BMI 25–30
 - **Normal BMI (15%)**: Healthier subset who pursue preventive/early surgery
@@ -178,12 +174,10 @@ All synthetic data parameters were selected to reflect published epidemiology, c
 3. Recovery phenotype assignment (higher BMI increases slow phenotype probability)
 
 ### Weight (Derived from BMI)
-**Formula**: `weight_kg = BMI × (height_m²)`
-**Justification**: Calculated from BMI and height using standard physiological formula, ensuring internal consistency
+**Formula**: `weight_kg = BMI × (height_m²)` Calculated from BMI and height using standard physiological formula, ensuring internal consistency
 
 ## Pre-operative Clinical Status
 ### Pre-operative Activity Level (Categorical: 35% low, 50% moderate, 15% high)
-**Justification:**
 - **Distribution**: Reflects typical TKA population where many patients have been activity-limited by arthritis pain
 - **Low activity (35%)**: Patients with severe functional limitation before surgery
 - **Moderate activity (50%)**: Most common; partial functional preservation pre-operatively
@@ -191,7 +185,6 @@ All synthetic data parameters were selected to reflect published epidemiology, c
 - **Clinical impact**: Higher pre-operative activity increases maximum steps and improves recovery phenotype probability (via sigmoid function with weight +0.5 × activity_code)
 
 ### Baseline Pain (Truncated Normal: μ=6, σ=2, range 1–10)
-**Justification:**
 - **Mean (6/10)**: Reflects moderate-to-severe pain that typically drives surgical decision-making
 - **Range (1–10)**: Standard pain scale (0 = no pain, 10 = worst pain)
 - **Clinical impact**: Pain directly correlates with post-operative sleep duration (sleep_hours reduced by 0.15 × baseline_pain), modelling how chronic pain disrupts recovery
