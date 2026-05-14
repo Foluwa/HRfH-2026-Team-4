@@ -64,8 +64,19 @@ pip install -r requirements.txt
 # Launch dashboard
 streamlit run app.py
 ```
-### 3. Dashboard understanding 
-Dashboard was created with the intention to be able to play with the variables, 
+## 3. Dashboard User's Guide
+
+User can access the Dashboard scanning the following QR Code:
+
+Dashboard helps users interacting and generating a comma-separated values file (.csv) of a virtual subject yearly-step count. 
+
+User can modify following parameters
+- Age range (between 45 and 90)
+- Gender (male, female, non-binary)
+- Recovery phenotype (fast intermediatre and slow)
+- Target of missingness (Missing complete at random, Missing at random, Missing not at random)
+
+- 
  
  ## Dashboard Screenshots
 
