@@ -196,7 +196,6 @@ All comorbidities use **sigmoid logistic functions** to model realistic age and 
 
 ### Cardiovascular Disease (Binary: 74.6% prevalence)
 **Formula**: `p_cardiovascular = sigmoid(−7 + 0.05 × age + 0.08 × BMI)`
-**Justification:**
 - **Literature prevalence**: 20–40% in general TKA cohorts; our 74.6% reflects selection for older, heavier patients (mean age 68)
 - **Age coefficient (0.05)**: Modest increase with age; cardiovascular disease is extremely common in 65+ populations
 - **BMI coefficient (0.08)**: Obesity is a strong cardiovascular risk factor
@@ -205,7 +204,6 @@ All comorbidities use **sigmoid logistic functions** to model realistic age and 
 
 ### Diabetes (Binary: 42.3% prevalence)
 **Formula**: `p_diabetes = sigmoid(−6 + 0.18 × BMI)`
-**Justification:**
 - **BMI dependence**: Obesity is the strongest modifiable risk factor for type 2 diabetes
 - **Coefficient (0.18)**: High sensitivity; reflects strong obesity-diabetes correlation
 - **Literature prevalence**: 30–50% in TKA cohorts, especially in obese populations
@@ -214,7 +212,6 @@ All comorbidities use **sigmoid logistic functions** to model realistic age and 
 
 ### Hypertension (Binary: 79.9% prevalence)
 **Formula**: `p_hypertension = sigmoid(−5 + 0.15 × BMI + 0.03 × age)`
-**Justification:**
 - **BMI and age dependent**: Both are independent risk factors
 - **Literature prevalence**: 60–80% in TKA cohorts (we observe 79.9%)
 - **Age coefficient (0.03)**: Modest effect; hypertension strongly correlates with age in 65+ populations
@@ -222,36 +219,29 @@ All comorbidities use **sigmoid logistic functions** to model realistic age and 
 
 ### Osteoporosis (Binary: 7.8% prevalence)
 **Formula**: `p_osteoporosis = sigmoid(−5 + 0.04 × age)`
-**Justification:**
 - **Age only**: Primary risk factor is advancing age
 - **Low prevalence (7.8%)**: Osteoporosis is less common than other comorbidities in mixed-gender TKA cohorts
 - **Female predominance expected**: Women at higher risk, but synthetic cohort is ~50/50 gender split
 - **Clinical impact**: Does not directly affect recovery in this model but adds realistic comorbidity burden
 
 ### Musculoskeletal Disease (Binary: 22.9% prevalence)
-
 **Formula**: `p_msk = sigmoid(−2 + 0.03 × BMI)`
-
-**Justification:**
 - **BMI dependent**: Higher weight increases musculoskeletal burden
 - **Literature**: Pre-existing musculoskeletal conditions (e.g., rheumatoid arthritis, other joint OA) present in ~15–25% of TKA candidates
 - **Clinical impact**: Does not directly affect recovery parameters but reflects real-world comorbidity complexity
 
 ## Wearable Device Parameters
 ### Device Brand (Categorical: Fitbit, Apple Watch, Garmin, equal probability)
-**Justification:**
 - **Equal distribution**: Reflects market competition; no single dominant brand in real-world populations
 - **Brands chosen**: Most common consumer wearables with step-counting capability
 - **Clinical impact**: Device brand does not affect recovery simulation but adds realism for data interpretation
 
 ### Battery Life (Truncated Normal: μ=24 hours, σ=8, range 8–72 hours)
-**Justification:**
 - **Realistic range**: Modern smartwatches vary from 8-hour (daily charge) to 72-hour (multi-day) battery
 - **Mean (24 hours)**: Many devices require daily charging
 - **Clinical impact**: Battery life influences missing data probability (indirectly via last_active_days)
 
 ### Last Active Days (Truncated Normal: μ=2, σ=3, range 0–30 days)
-**Justification:**
 - **Mean (2 days)**: Most wearables are actively used; few patients abandon devices
 - **Range (0–30)**: Some patients stop wearing devices after weeks (non-compliance)
 - **Clinical impact**: Directly affects missing data probability via sigmoid function:
@@ -262,7 +252,6 @@ All comorbidities use **sigmoid logistic functions** to model realistic age and 
 ## Recovery Phenotypes
 
 ### Phenotype Assignment (Categorical: 20% fast, 60% intermittent, 20% slow)
-**Justification:**
 Recovery phenotypes are assigned via **probability weighting** based on risk factors:
 
 ```python
