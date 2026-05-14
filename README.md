@@ -32,8 +32,8 @@ Healthcare research institutions need a realistic synthetic dataset to:
 | Missing mechanisms | 4 (MCAR, MAR, MNAR, Block) |
 
  ## Data description variables 
-| patient_id | age	height_cm | weight_kg | BMI | baseline_pain | battery_life_hours | last_active_days | max_steps |
-|--------|-------|--------|-------|--------|-------|--------|-------|
+|  | patient_id | age	| height_cm | weight_kg | BMI | baseline_pain | battery_life_hours | last_active_days | max_steps |
+|--------|-------|--------|-------|--------|-------|--------|-------|--------|-------|
 | count	| 1000.000000 | 1000.000000	| 1000.000000 | 1000.000000 | 1000.000000 | 1000.000000 | 1000.000000 | 1000.000000 | 1000.000000 |
 | mean |	499.500000	| 67.633000	| 168.174800	| 86.995500	| 30.628700	| 5.440000 | 24.082000 | 1.996000 | 5574.567000 |
 | std	| 288.819436	| 7.881144	| 10.042092	| 18.936273	| 5.408541	| 1.992579	| 7.679076	| 2.162096	| 1471.501063 |
