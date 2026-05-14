@@ -77,3 +77,16 @@ Hackathon participants
 
 ## License
 MIT License - see [LICENSE](LICENSE) file
+
+
+## Sample Output
+**First 5 rows of synthetic_daily_data.csv:**
+| patient_id | day | calendar_date | phenotype | latent_state | steps | heart_rate | sleep_hours |
+|---|---|---|---|---|---|---|---|
+| 0 | 1 | 2024-03-15 | fast | stable | 2145 | 78.3 | 6.2 |
+| 0 | 2 | 2024-03-16 | fast | improving | 2891 | 81.5 | 6.8 |
+| 1 | 1 | 2024-07-22 | slow | stable | 845 | 72.1 | 5.4 |
+| 1 | 2 | 2024-07-23 | slow | flare | 421 | 75.2 | 4.9 |
+| 2 | 1 | 2024-11-03 | intermittent | improving | 1567 | 76.8 | 7.1 |
+
+
