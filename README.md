@@ -55,7 +55,7 @@ Output: `synthetic_patients.csv` + `synthetic_daily_data.csv`
 ### 2. Install & Explore (Locally)
 ```bash
 # Clone repo
-git clone https://github.com/your-username/HRfH-Hackathon-2026.git
+git clone https://github.com/foluwa/HRfH-Hackathon-2026.git
 cd HRfH-Hackathon-2026
 
 # Install dependencies
@@ -111,7 +111,7 @@ Quantile–quantile (QQ) plots of the generated sample data for age, body mass i
   title={Synthetic Knee Replacement Recovery Data},
   author={Health Research from Home},
   year={2026},
-  url={https://github.com/your-username/HRfH-Hackathon-2026}
+  url={https://github.com/foluwa/HRfH-Hackathon-2026}
 }
 
 ## Acknowledgments
