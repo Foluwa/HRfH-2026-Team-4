@@ -79,7 +79,8 @@ User can modify following parameters
 - Recovery phenotype (fast intermediatre and slow)
 - Target of missingness (Missing complete at random, Missing at random, Missing not at random)
 
-- 
+
+From the Download tab, user can download single or multiple subjects yearly step count file or the full generated .csv file
  
 ## Dashboard Screenshots
 
