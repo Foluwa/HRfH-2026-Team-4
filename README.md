@@ -277,6 +277,7 @@ Recovery phenotypes are assigned via **probability weighting** based on risk fac
 fast_score = sigmoid(2 − 0.03 × age − 0.05 × BMI + 0.5 × activity_code)
 slow_score = sigmoid(−4 + 0.04 × age + 0.08 × BMI + 0.8 × diabetes)
 intermittent_score = 1.0 (baseline)
+```
 
 ## Design Rationale
 
