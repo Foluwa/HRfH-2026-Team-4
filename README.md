@@ -174,7 +174,7 @@ All synthetic data parameters were selected to reflect published epidemiology, c
 3. Recovery phenotype assignment (higher BMI increases slow phenotype probability)
 
 ### Weight (Derived from BMI)
-**Formula**: `weight_kg = BMI × (height_m²)` Calculated from BMI and height using standard physiological formula, ensuring internal consistency
+`weight_kg = BMI × (height_m²)` Calculated from BMI and height using standard physiological formula, ensuring internal consistency
 
 ## Pre-operative Clinical Status
 ### Pre-operative Activity Level (Categorical: 35% low, 50% moderate, 15% high)
@@ -195,7 +195,7 @@ All comorbidities use **sigmoid logistic functions** to model realistic age and 
 2. Comorbidities cluster (e.g., obese diabetic patients are more likely hypertensive)
 
 ### Cardiovascular Disease (Binary: 74.6% prevalence)
-**Formula**: `p_cardiovascular = sigmoid(−7 + 0.05 × age + 0.08 × BMI)`
+`p_cardiovascular = sigmoid(−7 + 0.05 × age + 0.08 × BMI)`
 - **Literature prevalence**: 20–40% in general TKA cohorts; our 74.6% reflects selection for older, heavier patients (mean age 68)
 - **Age coefficient (0.05)**: Modest increase with age; cardiovascular disease is extremely common in 65+ populations
 - **BMI coefficient (0.08)**: Obesity is a strong cardiovascular risk factor
@@ -203,7 +203,7 @@ All comorbidities use **sigmoid logistic functions** to model realistic age and 
 - **Clinical impact**: Cardiovascular disease slows recovery rate (k parameter reduced by 0.003)
 
 ### Diabetes (Binary: 42.3% prevalence)
-**Formula**: `p_diabetes = sigmoid(−6 + 0.18 × BMI)`
+ `p_diabetes = sigmoid(−6 + 0.18 × BMI)`
 - **BMI dependence**: Obesity is the strongest modifiable risk factor for type 2 diabetes
 - **Coefficient (0.18)**: High sensitivity; reflects strong obesity-diabetes correlation
 - **Literature prevalence**: 30–50% in TKA cohorts, especially in obese populations
@@ -211,21 +211,21 @@ All comorbidities use **sigmoid logistic functions** to model realistic age and 
 - **Clinical impact**: Diabetes increases slow phenotype probability (via sigmoid: +0.8 × diabetes), reflecting impaired wound healing and slower functional recovery
 
 ### Hypertension (Binary: 79.9% prevalence)
-**Formula**: `p_hypertension = sigmoid(−5 + 0.15 × BMI + 0.03 × age)`
+ `p_hypertension = sigmoid(−5 + 0.15 × BMI + 0.03 × age)`
 - **BMI and age dependent**: Both are independent risk factors
 - **Literature prevalence**: 60–80% in TKA cohorts (we observe 79.9%)
 - **Age coefficient (0.03)**: Modest effect; hypertension strongly correlates with age in 65+ populations
 - **Clinical impact**: Hypertension slows recovery rate (k reduced by 0.002)
 
 ### Osteoporosis (Binary: 7.8% prevalence)
-**Formula**: `p_osteoporosis = sigmoid(−5 + 0.04 × age)`
+ `p_osteoporosis = sigmoid(−5 + 0.04 × age)`
 - **Age only**: Primary risk factor is advancing age
 - **Low prevalence (7.8%)**: Osteoporosis is less common than other comorbidities in mixed-gender TKA cohorts
 - **Female predominance expected**: Women at higher risk, but synthetic cohort is ~50/50 gender split
 - **Clinical impact**: Does not directly affect recovery in this model but adds realistic comorbidity burden
 
 ### Musculoskeletal Disease (Binary: 22.9% prevalence)
-**Formula**: `p_msk = sigmoid(−2 + 0.03 × BMI)`
+ `p_msk = sigmoid(−2 + 0.03 × BMI)`
 - **BMI dependent**: Higher weight increases musculoskeletal burden
 - **Literature**: Pre-existing musculoskeletal conditions (e.g., rheumatoid arthritis, other joint OA) present in ~15–25% of TKA candidates
 - **Clinical impact**: Does not directly affect recovery parameters but reflects real-world comorbidity complexity
