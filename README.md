@@ -369,7 +369,29 @@ Heart rate was simulated as a function of baseline cardiovascular characteristic
 
 Sleep duration was designed to reflect the interaction between pain, recovery, and physical activity. Higher pain levels reduce sleep quality and duration, whilst greater physical activity slightly improves sleep outcomes. Random variability was added to reflect natural behavioural fluctuations. Including sleep data expands the simulator beyond mobility alone and creates a richer multimodal wearable dataset.
 
-## Missing Data Mechanisms
+
+## Model Development
+### Why Markov Chains Were Chosen
+
+Markov chains were used to model latent recovery states because they provide a simple and interpretable way to represent temporal changes in patient condition. As recovery is not perfectly smooth, and patients often transition between stable periods, improvement, flare-ups, and rehabilitation plateaus. Markov chains allow these transitions to occur probabilistically while maintaining realistic temporal continuity.
+
+A key advantage of Markov chains is their interpretability. Transition matrices can be clinically interpreted as they express the probability of transition through states for each recovery phenotypes.
+
+Markov chains also require fewer computational resources, less parameter tuning, and are easier to control within a synthetic simulation framework. 
+Additionally, Markov chains are better suited for representing temporary flare episodes or rehabilitation plateaus, generating clinically realistic recovery trajectories with meaningful temporal variability.
+
+### Phenotype-Specific Transition Matrices
+Separate transition matrices were assigned to each phenotype. Fast recovery subjects are more likely to remain in improving states and recover quickly from setbacks, while slow recovery patients are more likely to persist in flare or plateau states. Intermittent patients fluctuate more frequently between states. 
+
+### Latent Recovery States and State Effect Multipliers.
+Latent states were incorporated to represent hidden recovery conditions such as pain, fatigue, inflammation, or temporary rehabilitation setbacks that are not directly observable through wearable sensors.
+
+State effect multipliers were used to connect latent recovery conditions with wearable-derived activity levels. Improving states temporarily increase mobility, while flare states substantially reduce activity to simulate pain-related movement limitation. 
+
+### Autocorrelated Noise
+Autocorrelated noise was included to generate more realistic recovery trajectories compared with completely random independent noise. Patients who experience unusually high or low activity on one day are likely to demonstrate similar behaviour on subsequent days. 
+
+### Missing Data Mechanisms
 
 The missingness pathways were intentionally designed to replicate realistic wearable data challenges commonly encountered in digital health research:
 
@@ -379,6 +401,10 @@ The missingness pathways were intentionally designed to replicate realistic wear
 - **Seasonal missingness**: Simulates behavioural variation during winter months
 
 Including multiple missingness mechanisms creates more realistic incomplete longitudinal datasets and allows evaluation of analytical methods under different missing data assumptions.
+
+### Why Multiple Missingness Mechanisms Were Included
+Multiple missingness mechanisms were incorporated because incomplete data is common in wearable monitoring studies. Missingness may occur due to device non-use, charging issues, temporary disengagement, or symptom-related non-wear. Including missing completely at random (MCAR), missing at random (MAR), missing not at random (MNAR), and block missingness pathways allows the simulation to better reflect real-world wearable data challenges.
+
 
 ## Citation
 @dataset{hrfh_hackathon_2026,
