@@ -82,7 +82,7 @@ Two CSV files are generated in the repository root:
 
 **Patient Phenotype Characteristics**
 <img width="1589" height="490" alt="image" src="https://github.com/user-attachments/assets/6c5baeca-ca28-4fe9-b23d-1659377eb651" />
-The three recovery phenotypes differ significantly across age, BMI, and functional capacity:
+3 recovery phenotypes differ significantly across age, BMI, and functional capacity:
  Fast recoverers: younger, lower BMI, higher maximum steps (~7,500/day)
  Intermittent recoverers: middle-aged, moderate BMI, moderate steps (~7,000/day)
  Slow recoverers: older, higher BMI, lower maximum steps (~4,000/day)
@@ -90,9 +90,9 @@ The three recovery phenotypes differ significantly across age, BMI, and function
  **Comorbidity Prevalence**
  <img width="1489" height="804" alt="image" src="https://github.com/user-attachments/assets/a4b273ca-7ec0-4d71-8686-73630f64c0d8" />
 comorbidity patterns for knee replacement candidates:
- Hypertension (79.9%) and cardiovascular disease (74.6%) are most prevalent
- Diabetes (42.3%) is significant, known to impair post-operative recovery
- Osteoporosis (7.8%) and musculoskeletal disease (22.9%) are less common
+ - Hypertension (79.9%) and cardiovascular disease (74.6%) are most prevalent
+ - Diabetes (42.3%) is significant, known to impair post-operative recovery
+ - Osteoporosis (7.8%) and musculoskeletal disease (22.9%) are less common
 Comorbidities influence recovery trajectories in the simulation through slower logistic curves and higher missing data rates.
 
 
