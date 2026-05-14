@@ -110,7 +110,6 @@ Three Recovery Phenotypes
 Two CSV files are generated in the repository root:
 - **synthetic_patients.csv** (1,000 rows): Patient demographic and baseline characteristics
 - **synthetic_daily_data.csv** (365,000 rows): Daily time-series measurements for each patient
-- also an app?!
 
 **Patient Age Distribution**
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/1e8082eb-0407-4b52-978b-0d57586bb8e4" />
