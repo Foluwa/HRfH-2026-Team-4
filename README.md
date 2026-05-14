@@ -80,6 +80,9 @@ Two CSV files are generated in the repository root:
 - **synthetic_daily_data.csv** (365,000 rows): Daily time-series measurements for each patient
 - also an app?!
 
+**Patient Age Distribution**
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/1e8082eb-0407-4b52-978b-0d57586bb8e4" />
+
 **Patient Phenotype Characteristics**
 <img width="1589" height="490" alt="image" src="https://github.com/user-attachments/assets/6c5baeca-ca28-4fe9-b23d-1659377eb651" />
 3 recovery phenotypes differ significantly across age, BMI, and functional capacity:
