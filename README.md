@@ -62,6 +62,12 @@ Three Recovery Phenotypes
 | Intermittent | 60% | 5-6 months | Typical ups & downs |
 | Slow | 20% | 8-12 months | Older, overweight, high pain |
 
+## Data Output
+Two CSV files are generated in the repository root:
+- **synthetic_patients.csv** (1,000 rows): Patient demographic and baseline characteristics
+- **synthetic_daily_data.csv** (365,000 rows): Daily time-series measurements for each patient
+- also an app?!
+
 ## Citation
 @dataset{hrfh_hackathon_2026,
   title={Synthetic Knee Replacement Recovery Data},
@@ -79,14 +85,5 @@ Hackathon participants
 MIT License - see [LICENSE](LICENSE) file
 
 
-## Sample Output
-**First 5 rows of synthetic_daily_data.csv:**
-| patient_id | day | calendar_date | phenotype | latent_state | steps | heart_rate | sleep_hours |
-|---|---|---|---|---|---|---|---|
-| 0 | 1 | 2024-03-15 | fast | stable | 2145 | 78.3 | 6.2 |
-| 0 | 2 | 2024-03-16 | fast | improving | 2891 | 81.5 | 6.8 |
-| 1 | 1 | 2024-07-22 | slow | stable | 845 | 72.1 | 5.4 |
-| 1 | 2 | 2024-07-23 | slow | flare | 421 | 75.2 | 4.9 |
-| 2 | 1 | 2024-11-03 | intermittent | improving | 1567 | 76.8 | 7.1 |
 
 
